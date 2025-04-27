@@ -8,16 +8,16 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(270deg, #ff0080, #7928ca, #2afadf, #2a2a72);
+      background: linear-gradient(270deg, #4b0082, #00008b, #2a2a72, #000);
       background-size: 800% 800%;
       animation: rainbow 20s ease infinite;
-      color: #fff;
+      color: #00aaff;
       margin: 0;
       padding: 0;
       text-align: center;
       overflow-x: hidden;
-      border: 5px solid #00ffea;
-      box-shadow: 0 0 20px #00ffea, 0 0 40px #00ffea, 0 0 60px #00ffea;
+      border: 5px solid #00aaff;
+      box-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff, 0 0 60px #00aaff;
     }
     @keyframes rainbow {
       0%{background-position:0% 50%}
@@ -37,6 +37,9 @@
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 1s ease-out, transform 1s ease-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     section.visible {
       opacity: 1;
@@ -49,14 +52,16 @@
       gap: 1rem;
     }
     .product, .photo, .about, .features {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(10, 10, 30, 0.85);
       padding: 1.5rem;
       width: 300px;
       border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+      border: 2px solid #00aaff;
+      margin-bottom: 1.5rem;
     }
     button {
-      background: #00d4ff;
+      background: #00aaff;
       color: black;
       border: none;
       padding: 0.75rem 1.5rem;
@@ -67,7 +72,7 @@
       transition: background 0.3s, transform 0.3s;
     }
     button:hover {
-      background: #00b4d8;
+      background: #0088cc;
       transform: scale(1.1);
     }
     .footer {
@@ -75,22 +80,25 @@
       font-size: 1rem;
     }
     .footer a {
-      color: #00ffea;
+      color: #00aaff;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
     }
     .footer a:hover {
-      color: #00b4d8;
+      color: #0088cc;
     }
     img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 0 10px #00ffea;
+      box-shadow: 0 0 10px #00aaff;
       margin-top: 1rem;
     }
     audio {
       display: none;
+    }
+    ul li strong {
+      color: lime;
     }
   </style>
 </head>
@@ -195,9 +203,9 @@
   <div class="features">
     <h2>Tools Status</h2>
     <ul style="text-align:left; max-width: 250px; margin: auto;">
-      <li>🎮 VRChat Internal: <strong style="color:lime;">Online</strong></li>
-      <li>🎯 Fortnite Chair: <strong style="color:lime;">Online</strong></li>
-      <li>🔫 COD Chair: <strong style="color:lime;">Online</strong></li>
+      <li>🎮 VRChat Internal: <strong>Online</strong></li>
+      <li>🎯 Fortnite Chair: <strong>Online</strong></li>
+      <li>🔫 COD Chair: <strong>Online</strong></li>
     </ul>
   </div>
 </section>
