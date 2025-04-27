@@ -18,6 +18,15 @@
       overflow-x: hidden;
       border: 5px solid #00aaff;
       box-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff, 0 0 60px #00aaff;
+      position: relative;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
     }
     @keyframes rainbow {
       0%{background-position:0% 50%}
@@ -111,131 +120,45 @@
 </head>
 <body>
 
+<div id="particles-js"></div>
+
 <header>
   <h1>Cult Of Doggos Store</h1>
   <p>Unlock your advantage! Choose your Hex key below:</p>
 </header>
 
-<section id="about">
-  <div class="about">
-    <h2>About Us</h2>
-    <p>We are a passionate team from Cult Of Doggos bringing you premium cheats and hacks with style. Our mission is to give you the best performance enhancements and the coolest community to be part of!</p>
-  </div>
-</section>
-
-<section id="features">
-  <h2>Features</h2>
-  <div class="features-container">
-    <div class="feature-box">
-      <h3>Safe & Secure</h3>
-      <p>Top-notch security to keep your account safe.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Instant Delivery</h3>
-      <p>Receive your key instantly after purchase.</p>
-    </div>
-    <div class="feature-box">
-      <h3>24/7 Support</h3>
-      <p>We're here for you anytime, anywhere.</p>
-    </div>
-  </div>
-</section>
-
-<section id="photos">
-  <h2>Gallery</h2>
-  <div class="gallery-container">
-    <div class="gallery-item">
-      <img src="your-image-link-1.jpg" alt="Product Showcase">
-    </div>
-    <div class="gallery-item">
-      <img src="your-image-link-2.jpg" alt="Customer Review">
-    </div>
-  </div>
-</section>
-
-<section id="hex-products">
-  <h2>Hex Keys</h2>
-  <div class="products-container">
-    <div class="product">
-      <h2>1 Month Hex Key</h2>
-      <p>$9.99</p>
-      <a href="#" target="_blank"><button>Buy 1 Month</button></a>
-    </div>
-    <div class="product">
-      <h2>3 Month Hex Key</h2>
-      <p>$24.99</p>
-      <a href="#" target="_blank"><button>Buy 3 Months</button></a>
-    </div>
-    <div class="product">
-      <h2>Lifetime Hex Key</h2>
-      <p>$59.99</p>
-      <a href="#" target="_blank"><button>Buy Lifetime</button></a>
-    </div>
-  </div>
-</section>
-
-<section id="fortnite-products">
-  <h2>Fortnite Chair Keys</h2>
-  <div class="products-container">
-    <div class="product">
-      <h3>1 Month Fortnite Chair Key</h3>
-      <p>$14.99</p>
-      <a href="#" target="_blank"><button>Buy 1 Month</button></a>
-    </div>
-    <div class="product">
-      <h3>3 Month Fortnite Chair Key</h3>
-      <p>$34.99</p>
-      <a href="#" target="_blank"><button>Buy 3 Months</button></a>
-    </div>
-    <div class="product">
-      <h3>Lifetime Fortnite Chair Key</h3>
-      <p>$79.99</p>
-      <a href="#" target="_blank"><button>Buy Lifetime</button></a>
-    </div>
-  </div>
-</section>
-
-<section id="cod-products">
-  <h2>Call of Duty Chair Keys</h2>
-  <div class="products-container">
-    <div class="product">
-      <h3>1 Month COD Chair Key</h3>
-      <p>$19.99</p>
-      <a href="#" target="_blank"><button>Buy 1 Month</button></a>
-    </div>
-    <div class="product">
-      <h3>3 Month COD Chair Key</h3>
-      <p>$49.99</p>
-      <a href="#" target="_blank"><button>Buy 3 Months</button></a>
-    </div>
-    <div class="product">
-      <h3>Lifetime COD Chair Key</h3>
-      <p>$99.99</p>
-      <a href="#" target="_blank"><button>Buy Lifetime</button></a>
-    </div>
-  </div>
-</section>
-
-<section id="tools-status">
-  <div class="tools-status">
-    <h2>Tools Status</h2>
-    <ul style="text-align:left; max-width: 250px; margin: auto;">
-      <li>🎮 VRChat Internal: <strong>Online</strong></li>
-      <li>🎯 Fortnite Chair: <strong>Online</strong></li>
-      <li>🔫 COD Chair: <strong>Online</strong></li>
-    </ul>
-  </div>
-</section>
-
-<div class="footer">
-  <p>Check out more here: <a href="https://guns.lol/gooddoggoluna" target="_blank">guns.lol/gooddoggoluna</a></p>
-</div>
+<!-- Your existing sections -->
 
 <audio id="background-music" autoplay loop muted>
   <source src="your-music-file.mp3" type="audio/mpeg">
 </audio>
 
+<div class="footer">
+  <p>Follow us on <a href="https://discord.com/" target="_blank">Discord</a> | <a href="https://guns.lol/gooddoggoluna" target="_blank">guns.lol/gooddoggoluna</a></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
+  particlesJS('particles-js', {
+    "particles": {
+      "number": { "value": 80 },
+      "color": { "value": "#00aaff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5, "random": true },
+      "size": { "value": 3, "random": true },
+      "move": { "enable": true, "speed": 2 }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      },
+      "modes": {
+        "push": { "particles_nb": 10 }
+      }
+    }
+  });
+
   document.addEventListener('click', () => {
     const music = document.getElementById('background-music');
     music.muted = false;
