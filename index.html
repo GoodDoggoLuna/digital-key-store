@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rainbow Cheats - Digital Keys</title>
+  <title>Cult Of Doggos Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -15,35 +15,59 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      overflow-x: hidden;
+      border: 5px solid #00ffea;
+      box-shadow: 0 0 20px #00ffea, 0 0 40px #00ffea, 0 0 60px #00ffea;
     }
     @keyframes rainbow {
       0%{background-position:0% 50%}
       50%{background-position:100% 50%}
       100%{background-position:0% 50%}
     }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
     header {
       padding: 2rem;
+      animation: float 4s ease-in-out infinite;
     }
     .product {
       background: rgba(0, 0, 0, 0.7);
       margin: 1rem auto;
-      padding: 1rem;
+      padding: 1.5rem;
       width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+      animation: float 6s ease-in-out infinite;
     }
     button {
       background: #00d4ff;
       color: black;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
       cursor: pointer;
       margin-top: 1rem;
-      transition: background 0.3s;
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.3s;
     }
     button:hover {
       background: #00b4d8;
+      transform: scale(1.1);
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 1rem;
+    }
+    .footer a {
+      color: #00ffea;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .footer a:hover {
+      color: #00b4d8;
     }
     audio {
       display: none;
@@ -53,26 +77,30 @@
 <body>
 
 <header>
-  <h1>GoodDoggoLuna Cheats</h1>
-  <p>Unlock your advantage! Choose your key duration below:</p>
+  <h1>Cult Of Doggos Store</h1>
+  <p>Unlock your advantage! Choose your Hex key below:</p>
 </header>
 
 <div class="product">
   <h2>1 Month Hex Key</h2>
-  <p>$20.00 USD</p>
+  <p>$9.99</p>
   <a href="YOUR_PAYMENT_LINK_FOR_1_MONTH" target="_blank"><button>Buy 1 Month</button></a>
 </div>
 
 <div class="product">
   <h2>3 Month Hex Key</h2>
-  <p>$40.00 USD</p>
+  <p>$24.99</p>
   <a href="YOUR_PAYMENT_LINK_FOR_3_MONTHS" target="_blank"><button>Buy 3 Months</button></a>
 </div>
 
 <div class="product">
   <h2>Lifetime Hex Key</h2>
-  <p>$90.00 USD</p>
+  <p>$59.99</p>
   <a href="YOUR_PAYMENT_LINK_FOR_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+</div>
+
+<div class="footer">
+  <p>Check out more here: <a href="https://guns.lol/gooddoggoluna" target="_blank">guns.lol/gooddoggoluna</a></p>
 </div>
 
 <audio id="background-music" autoplay loop muted>
