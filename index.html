@@ -32,14 +32,23 @@
       padding: 2rem;
       animation: float 4s ease-in-out infinite;
     }
-    .product {
+    section {
+      margin: 2rem 0;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .product, .photo, .about, .features {
       background: rgba(0, 0, 0, 0.7);
       margin: 1rem auto;
       padding: 1.5rem;
       width: 300px;
       border-radius: 16px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-      animation: float 6s ease-in-out infinite;
     }
     button {
       background: #00d4ff;
@@ -69,6 +78,12 @@
     .footer a:hover {
       color: #00b4d8;
     }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00ffea;
+      margin-top: 1rem;
+    }
     audio {
       display: none;
     }
@@ -81,23 +96,91 @@
   <p>Unlock your advantage! Choose your Hex key below:</p>
 </header>
 
-<div class="product">
-  <h2>1 Month Hex Key</h2>
-  <p>$9.99</p>
-  <a href="YOUR_PAYMENT_LINK_FOR_1_MONTH" target="_blank"><button>Buy 1 Month</button></a>
-</div>
+<section id="hex-products">
+  <div class="product">
+    <h2>1 Month Hex Key</h2>
+    <p>$9.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_1_MONTH" target="_blank"><button>Buy 1 Month</button></a>
+  </div>
 
-<div class="product">
-  <h2>3 Month Hex Key</h2>
-  <p>$24.99</p>
-  <a href="YOUR_PAYMENT_LINK_FOR_3_MONTHS" target="_blank"><button>Buy 3 Months</button></a>
-</div>
+  <div class="product">
+    <h2>3 Month Hex Key</h2>
+    <p>$24.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_3_MONTHS" target="_blank"><button>Buy 3 Months</button></a>
+  </div>
 
-<div class="product">
-  <h2>Lifetime Hex Key</h2>
-  <p>$59.99</p>
-  <a href="YOUR_PAYMENT_LINK_FOR_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
-</div>
+  <div class="product">
+    <h2>Lifetime Hex Key</h2>
+    <p>$59.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+  </div>
+</section>
+
+<section id="fortnite-products">
+  <h2>Fortnite Chair Keys</h2>
+  <div class="product">
+    <h3>1 Month Fortnite Chair Key</h3>
+    <p>$14.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_1M" target="_blank"><button>Buy 1 Month</button></a>
+  </div>
+  <div class="product">
+    <h3>3 Month Fortnite Chair Key</h3>
+    <p>$34.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_3M" target="_blank"><button>Buy 3 Months</button></a>
+  </div>
+  <div class="product">
+    <h3>Lifetime Fortnite Chair Key</h3>
+    <p>$79.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+  </div>
+</section>
+
+<section id="cod-products">
+  <h2>Call of Duty Chair Keys</h2>
+  <div class="product">
+    <h3>1 Month COD Chair Key</h3>
+    <p>$19.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_COD_1M" target="_blank"><button>Buy 1 Month</button></a>
+  </div>
+  <div class="product">
+    <h3>3 Month COD Chair Key</h3>
+    <p>$49.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_COD_3M" target="_blank"><button>Buy 3 Months</button></a>
+  </div>
+  <div class="product">
+    <h3>Lifetime COD Chair Key</h3>
+    <p>$99.99</p>
+    <a href="YOUR_PAYMENT_LINK_FOR_COD_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+  </div>
+</section>
+
+<section id="photos">
+  <div class="photo">
+    <h2>Gallery</h2>
+    <img src="your-image-link-1.jpg" alt="Product Showcase">
+    <img src="your-image-link-2.jpg" alt="Customer Review">
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <h2>About Us</h2>
+    <p>We are a passionate team from Cult Of Doggos bringing you premium cheats and hacks with style. Our mission is to give you the best performance enhancements and the coolest community to be part of!</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="features">
+    <h2>Features</h2>
+    <ul style="text-align:left; max-width: 250px; margin: auto;">
+      <li>✔️ Safe & Secure Cheats</li>
+      <li>✔️ Instant Key Delivery</li>
+      <li>✔️ 24/7 Support</li>
+      <li>✔️ Regular Updates</li>
+      <li>✔️ User-Friendly Interface</li>
+    </ul>
+  </div>
+</section>
 
 <div class="footer">
   <p>Check out more here: <a href="https://guns.lol/gooddoggoluna" target="_blank">guns.lol/gooddoggoluna</a></p>
@@ -109,11 +192,22 @@
 </audio>
 
 <script>
-  // Auto-unmute music after user interaction (because of browser autoplay policies)
   document.addEventListener('click', () => {
     const music = document.getElementById('background-music');
     music.muted = false;
   }, { once: true });
+
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if(sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  });
 </script>
 
 </body>
