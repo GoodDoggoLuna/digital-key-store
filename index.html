@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Key Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 2rem;
+    }
+    .product {
+      background: white;
+      margin: 1rem auto;
+      padding: 1rem;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Digital Key Store</h1>
+  <p>Buy your favorite digital keys instantly!</p>
+</header>
+
+<div class="product">
+  <h2>Game Key - XYZ</h2>
+  <p>$9.99</p>
+  <a href="YOUR_PAYMENT_LINK_HERE" target="_blank"><button>Buy Now</button></a>
+</div>
+
+<div class="product">
+  <h2>Software License - ABC</h2>
+  <p>$14.99</p>
+  <a href="YOUR_PAYMENT_LINK_HERE" target="_blank"><button>Buy Now</button></a>
+</div>
+
+<audio id="background-music" autoplay loop muted>
+  <source src="your-music-file.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  // Auto-unmute music after user interaction (because of browser autoplay policies)
+  document.addEventListener('click', () => {
+    const music = document.getElementById('background-music');
+    music.muted = false;
+  }, { once: true });
+</script>
+
+</body>
+</html>
