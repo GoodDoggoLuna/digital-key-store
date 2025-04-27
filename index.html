@@ -42,9 +42,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
     .product, .photo, .about, .features {
       background: rgba(0, 0, 0, 0.7);
-      margin: 1rem auto;
       padding: 1.5rem;
       width: 300px;
       border-radius: 16px;
@@ -97,60 +102,64 @@
 </header>
 
 <section id="hex-products">
-  <div class="product">
-    <h2>1 Month Hex Key</h2>
-    <p>$9.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_1_MONTH" target="_blank"><button>Buy 1 Month</button></a>
-  </div>
-
-  <div class="product">
-    <h2>3 Month Hex Key</h2>
-    <p>$24.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_3_MONTHS" target="_blank"><button>Buy 3 Months</button></a>
-  </div>
-
-  <div class="product">
-    <h2>Lifetime Hex Key</h2>
-    <p>$59.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+  <div class="products-container">
+    <div class="product">
+      <h2>1 Month Hex Key</h2>
+      <p>$9.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_1_MONTH" target="_blank"><button>Buy 1 Month</button></a>
+    </div>
+    <div class="product">
+      <h2>3 Month Hex Key</h2>
+      <p>$24.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_3_MONTHS" target="_blank"><button>Buy 3 Months</button></a>
+    </div>
+    <div class="product">
+      <h2>Lifetime Hex Key</h2>
+      <p>$59.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+    </div>
   </div>
 </section>
 
 <section id="fortnite-products">
   <h2>Fortnite Chair Keys</h2>
-  <div class="product">
-    <h3>1 Month Fortnite Chair Key</h3>
-    <p>$14.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_1M" target="_blank"><button>Buy 1 Month</button></a>
-  </div>
-  <div class="product">
-    <h3>3 Month Fortnite Chair Key</h3>
-    <p>$34.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_3M" target="_blank"><button>Buy 3 Months</button></a>
-  </div>
-  <div class="product">
-    <h3>Lifetime Fortnite Chair Key</h3>
-    <p>$79.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+  <div class="products-container">
+    <div class="product">
+      <h3>1 Month Fortnite Chair Key</h3>
+      <p>$14.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_1M" target="_blank"><button>Buy 1 Month</button></a>
+    </div>
+    <div class="product">
+      <h3>3 Month Fortnite Chair Key</h3>
+      <p>$34.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_3M" target="_blank"><button>Buy 3 Months</button></a>
+    </div>
+    <div class="product">
+      <h3>Lifetime Fortnite Chair Key</h3>
+      <p>$79.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+    </div>
   </div>
 </section>
 
 <section id="cod-products">
   <h2>Call of Duty Chair Keys</h2>
-  <div class="product">
-    <h3>1 Month COD Chair Key</h3>
-    <p>$19.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_COD_1M" target="_blank"><button>Buy 1 Month</button></a>
-  </div>
-  <div class="product">
-    <h3>3 Month COD Chair Key</h3>
-    <p>$49.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_COD_3M" target="_blank"><button>Buy 3 Months</button></a>
-  </div>
-  <div class="product">
-    <h3>Lifetime COD Chair Key</h3>
-    <p>$99.99</p>
-    <a href="YOUR_PAYMENT_LINK_FOR_COD_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+  <div class="products-container">
+    <div class="product">
+      <h3>1 Month COD Chair Key</h3>
+      <p>$19.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_COD_1M" target="_blank"><button>Buy 1 Month</button></a>
+    </div>
+    <div class="product">
+      <h3>3 Month COD Chair Key</h3>
+      <p>$49.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_COD_3M" target="_blank"><button>Buy 3 Months</button></a>
+    </div>
+    <div class="product">
+      <h3>Lifetime COD Chair Key</h3>
+      <p>$99.99</p>
+      <a href="YOUR_PAYMENT_LINK_FOR_COD_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+    </div>
   </div>
 </section>
 
@@ -178,6 +187,17 @@
       <li>✔️ 24/7 Support</li>
       <li>✔️ Regular Updates</li>
       <li>✔️ User-Friendly Interface</li>
+    </ul>
+  </div>
+</section>
+
+<section id="tools-status">
+  <div class="features">
+    <h2>Tools Status</h2>
+    <ul style="text-align:left; max-width: 250px; margin: auto;">
+      <li>🎮 VRChat Internal: <strong style="color:lime;">Online</strong></li>
+      <li>🎯 Fortnite Chair: <strong style="color:lime;">Online</strong></li>
+      <li>🔫 COD Chair: <strong style="color:lime;">Online</strong></li>
     </ul>
   </div>
 </section>
