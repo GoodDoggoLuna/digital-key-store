@@ -28,6 +28,10 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
     header {
       padding: 2rem;
       animation: float 4s ease-in-out infinite;
@@ -45,13 +49,13 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .products-container {
+    .products-container, .features-container, .gallery-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
     }
-    .product, .photo, .about, .features {
+    .product, .photo, .about, .feature-box, .gallery-item, .tools-status {
       background: rgba(10, 10, 30, 0.85);
       padding: 1.5rem;
       width: 300px;
@@ -59,6 +63,11 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.8);
       border: 2px solid #00aaff;
       margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product:hover, .photo:hover, .about:hover, .feature-box:hover, .gallery-item:hover, .tools-status:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff;
     }
     button {
       background: #00aaff;
@@ -69,11 +78,13 @@
       cursor: pointer;
       margin-top: 1rem;
       font-size: 1rem;
-      transition: background 0.3s, transform 0.3s;
+      animation: pulse 2s infinite;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     }
     button:hover {
       background: #0088cc;
       transform: scale(1.1);
+      box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff;
     }
     .footer {
       margin-top: 3rem;
@@ -94,12 +105,8 @@
       box-shadow: 0 0 10px #00aaff;
       margin-top: 1rem;
     }
-    audio {
-      display: none;
-    }
-    ul li strong {
-      color: lime;
-    }
+    audio { display: none; }
+    ul li strong { color: lime; }
   </style>
 </head>
 <body>
@@ -117,42 +124,52 @@
 </section>
 
 <section id="features">
-  <div class="features">
-    <h2>Features</h2>
-    <ul style="text-align:left; max-width: 250px; margin: auto;">
-      <li>✔️ Safe & Secure Cheats</li>
-      <li>✔️ Instant Key Delivery</li>
-      <li>✔️ 24/7 Support</li>
-      <li>✔️ Regular Updates</li>
-      <li>✔️ User-Friendly Interface</li>
-    </ul>
+  <h2>Features</h2>
+  <div class="features-container">
+    <div class="feature-box">
+      <h3>Safe & Secure</h3>
+      <p>Top-notch security to keep your account safe.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Instant Delivery</h3>
+      <p>Receive your key instantly after purchase.</p>
+    </div>
+    <div class="feature-box">
+      <h3>24/7 Support</h3>
+      <p>We're here for you anytime, anywhere.</p>
+    </div>
   </div>
 </section>
 
 <section id="photos">
-  <div class="photo">
-    <h2>Gallery</h2>
-    <img src="your-image-link-1.jpg" alt="Product Showcase">
-    <img src="your-image-link-2.jpg" alt="Customer Review">
+  <h2>Gallery</h2>
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="your-image-link-1.jpg" alt="Product Showcase">
+    </div>
+    <div class="gallery-item">
+      <img src="your-image-link-2.jpg" alt="Customer Review">
+    </div>
   </div>
 </section>
 
 <section id="hex-products">
+  <h2>Hex Keys</h2>
   <div class="products-container">
     <div class="product">
       <h2>1 Month Hex Key</h2>
       <p>$9.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_1_MONTH" target="_blank"><button>Buy 1 Month</button></a>
+      <a href="#" target="_blank"><button>Buy 1 Month</button></a>
     </div>
     <div class="product">
       <h2>3 Month Hex Key</h2>
       <p>$24.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_3_MONTHS" target="_blank"><button>Buy 3 Months</button></a>
+      <a href="#" target="_blank"><button>Buy 3 Months</button></a>
     </div>
     <div class="product">
       <h2>Lifetime Hex Key</h2>
       <p>$59.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+      <a href="#" target="_blank"><button>Buy Lifetime</button></a>
     </div>
   </div>
 </section>
@@ -163,17 +180,17 @@
     <div class="product">
       <h3>1 Month Fortnite Chair Key</h3>
       <p>$14.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_1M" target="_blank"><button>Buy 1 Month</button></a>
+      <a href="#" target="_blank"><button>Buy 1 Month</button></a>
     </div>
     <div class="product">
       <h3>3 Month Fortnite Chair Key</h3>
       <p>$34.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_3M" target="_blank"><button>Buy 3 Months</button></a>
+      <a href="#" target="_blank"><button>Buy 3 Months</button></a>
     </div>
     <div class="product">
       <h3>Lifetime Fortnite Chair Key</h3>
       <p>$79.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_FORTNITE_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+      <a href="#" target="_blank"><button>Buy Lifetime</button></a>
     </div>
   </div>
 </section>
@@ -184,23 +201,23 @@
     <div class="product">
       <h3>1 Month COD Chair Key</h3>
       <p>$19.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_COD_1M" target="_blank"><button>Buy 1 Month</button></a>
+      <a href="#" target="_blank"><button>Buy 1 Month</button></a>
     </div>
     <div class="product">
       <h3>3 Month COD Chair Key</h3>
       <p>$49.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_COD_3M" target="_blank"><button>Buy 3 Months</button></a>
+      <a href="#" target="_blank"><button>Buy 3 Months</button></a>
     </div>
     <div class="product">
       <h3>Lifetime COD Chair Key</h3>
       <p>$99.99</p>
-      <a href="YOUR_PAYMENT_LINK_FOR_COD_LIFETIME" target="_blank"><button>Buy Lifetime</button></a>
+      <a href="#" target="_blank"><button>Buy Lifetime</button></a>
     </div>
   </div>
 </section>
 
 <section id="tools-status">
-  <div class="features">
+  <div class="tools-status">
     <h2>Tools Status</h2>
     <ul style="text-align:left; max-width: 250px; margin: auto;">
       <li>🎮 VRChat Internal: <strong>Online</strong></li>
@@ -216,7 +233,6 @@
 
 <audio id="background-music" autoplay loop muted>
   <source src="your-music-file.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
 
 <script>
@@ -228,7 +244,6 @@
   const sections = document.querySelectorAll('section');
   window.addEventListener('scroll', () => {
     const triggerBottom = window.innerHeight * 0.85;
-
     sections.forEach(section => {
       const sectionTop = section.getBoundingClientRect().top;
       if(sectionTop < triggerBottom) {
