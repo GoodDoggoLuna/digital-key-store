@@ -3,254 +3,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cult Of Doggos Store</title>
+  <title>Cult Of Doggos Store 🐾</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(270deg, #4b0082, #00008b, #2a2a72, #000);
-      background-size: 800% 800%;
-      animation: rainbow 20s ease infinite;
-      color: #00aaff;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a1e;
+      color: #00aaff;
       overflow-x: hidden;
-      border: 5px solid #00aaff;
-      box-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff, 0 0 60px #00aaff;
       position: relative;
     }
     #particles-js {
-      position: fixed;
+      position: absolute;
       width: 100%;
       height: 100%;
       z-index: -1;
-      top: 0;
-      left: 0;
     }
-    @keyframes rainbow {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+    .announcement-bar {
+      width: 100%;
+      background: #111133;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 2px solid #00aaff;
+      position: relative;
+      z-index: 10;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .announcement-text {
+      display: inline-block;
+      padding: 1rem 0;
+      color: #00aaff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      animation: scroll-left 20s linear infinite;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
-    header {
-      padding: 2rem;
-      animation: float 4s ease-in-out infinite;
+    header, section {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
-    section {
-      margin: 2rem 0;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .products-container, .features-container, .gallery-container {
+    .products, .features, .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
+      margin-top: 1rem;
     }
-    .product, .photo, .about, .feature-box, .gallery-item, .tools-status {
-      background: rgba(10, 10, 30, 0.85);
+    .product-section {
+      background: rgba(20, 20, 50, 0.9);
       padding: 1.5rem;
-      width: 300px;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.8);
       border: 2px solid #00aaff;
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      width: 95%;
+      margin: 2rem auto 1rem;
     }
-    .product:hover, .photo:hover, .about:hover, .feature-box:hover, .gallery-item:hover, .tools-status:hover {
+    .product, .feature, .tool, .gallery-item {
+      background: rgba(20, 20, 50, 0.9);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 2px solid #00aaff;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product:hover, .feature:hover, .tool:hover, .gallery-item:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff;
+      box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff;
+    }
+    .product h4 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
     }
     button {
       background: #00aaff;
-      color: black;
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.5rem;
+      color: #0a0a1e;
+      font-weight: bold;
       border-radius: 8px;
+      font-size: 1.4rem;
       cursor: pointer;
-      margin-top: 1rem;
-      font-size: 1rem;
-      animation: pulse 2s infinite;
-      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      transition: background 0.3s, transform 0.3s;
+      margin-top: 0.5rem;
     }
     button:hover {
       background: #0088cc;
       transform: scale(1.1);
-      box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff;
-    }
-    .footer {
-      margin-top: 3rem;
-      font-size: 1rem;
-    }
-    .footer a {
-      color: #00aaff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .footer a:hover {
-      color: #0088cc;
-    }
-    img {
-      width: 100%;
-      border-radius: 12px;
       box-shadow: 0 0 10px #00aaff;
-      margin-top: 1rem;
     }
-    audio { display: none; }
-    ul li strong { color: lime; }
+    .volume-control {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      z-index: 999;
+    }
+    input[type=range] {
+      width: 80px;
+      transform: rotate(-90deg);
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    iframe {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .gallery-item {
+      width: 320px;
+      overflow: hidden;
+    }
+    .about-us {
+      background: rgba(20, 20, 50, 0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #00aaff;
+      text-align: center;
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto 1rem;
+    }
+    .tools-box {
+      background: rgba(20, 20, 50, 0.9);
+      padding: 1.5rem;
+      border: 2px solid #00aaff;
+      border-radius: 12px;
+      text-align: center;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 900px;
+    }
+    .tools-box h3 {
+      margin-top: 0.5rem;
+      font-size: 1.4rem;
+    }
+    .tools-box p {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #00ff00;
+    }
   </style>
 </head>
 <body>
-
+<div class="announcement-bar">
+  <div class="announcement-text">
+    🎉 Welcome to Cult Of Doggos Store - Best HEX & Chair Keys in Town! 🚀 Fast delivery | 24/7 Support | Safe & Secure 🛡️
+  </div>
+</div>
 <div id="particles-js"></div>
 
-<header>
-  <h1>Cult Of Doggos Store</h1>
-  <p>Unlock your advantage! Choose your Hex key below:</p>
-</header>
-
-<section class="about">
-  <h2>About Us</h2>
-  <p>Welcome to Cult of Doggos Store! We specialize in premium digital keys for cheats and enhancements. Quality, security, and reliability are our priorities!</p>
-</section>
-
-<section class="features-container">
-  <div class="feature-box">
-    <h3>Secure Payments</h3>
-    <p>Encrypted transactions ensure safe and fast checkouts.</p>
-  </div>
-  <div class="feature-box">
-    <h3>Instant Delivery</h3>
-    <p>Get your keys delivered instantly to your email!</p>
-  </div>
-  <div class="feature-box">
-    <h3>Premium Support</h3>
-    <p>Our team is here to help you 24/7 on Discord!</p>
-  </div>
-</section>
-
-<section class="products-container">
-  <div class="product">
-    <h3>Hex Key - 1 Month</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Hex Key - 3 Months</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Hex Key - Lifetime</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Fortnite Chair - 1 Month</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Fortnite Chair - 3 Months</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Fortnite Chair - Lifetime</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Call of Duty Chair - 1 Month</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Call of Duty Chair - 3 Months</h3>
-    <button>Buy Now</button>
-  </div>
-  <div class="product">
-    <h3>Call of Duty Chair - Lifetime</h3>
-    <button>Buy Now</button>
-  </div>
-</section>
-
-<section class="gallery-container">
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/300x200?text=Screenshot+1" alt="Screenshot 1">
-  </div>
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/300x200?text=Screenshot+2" alt="Screenshot 2">
-  </div>
-  <div class="gallery-item">
-    <img src="https://via.placeholder.com/300x200?text=Screenshot+3" alt="Screenshot 3">
-  </div>
-</section>
-
-<section class="tools-status">
-  <h2>Tools Status</h2>
-  <ul>
-    <li><strong>VRChat Internal:</strong> Online</li>
-    <li><strong>Fortnite Chair:</strong> Online</li>
-    <li><strong>Call of Duty Chair:</strong> Updating</li>
-  </ul>
-</section>
-
-<audio id="background-music" autoplay loop muted>
-  <source src="your-music-file.mp3" type="audio/mpeg">
+<audio id="background-music" autoplay loop>
+  <source src="/mnt/data/BACK%20UP%20(Mlp%20Rap%20Music).mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
 
-<div class="footer">
-  <p>Follow us on <a href="https://discord.com/" target="_blank">Discord</a> | <a href="https://guns.lol/gooddoggoluna" target="_blank">guns.lol/gooddoggoluna</a></p>
+<div class="volume-control">
+  <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<header>
+  <h1>Cult Of Doggos Store 🐶✨</h1>
+</header>
+
+<div class="about-us">
+  <h2>About Us 🛒</h2>
+  <p>Welcome to Cult Of Doggos Store! We offer premium cheat keys for your favorite games with top-notch quality and security! 🚀</p>
+</div>
+
+<section>
+  <h2>Gallery 🎥</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="gallery-item">
+      <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="gallery-item">
+      <iframe src="https://www.youtube.com/embed/2Z4m4lnjxkY" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Features ✨</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>⚡ Fast Delivery</h3>
+      <p>Instant email delivery after purchase.</p>
+    </div>
+    <div class="feature">
+      <h3>🔒 Top Security</h3>
+      <p>Undetected and safe to use with constant updates.</p>
+    </div>
+    <div class="feature">
+      <h3>📞 24/7 Support</h3>
+      <p>We're here to help you any time you need it.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Products 🛍️</h2>
+  <div class="product-section">
+    <h3>Hex Keys 🧩</h3>
+    <div class="products">
+      <div class="product"><h4>1 Month</h4><button>Buy Now</button></div>
+      <div class="product"><h4>3 Months</h4><button>Buy Now</button></div>
+      <div class="product"><h4>Lifetime</h4><button>Buy Now</button></div>
+    </div>
+
+    <h3>Fortnite Chair Keys 🎮</h3>
+    <div class="products">
+      <div class="product"><h4>1 Month</h4><button>Buy Now</button></div>
+      <div class="product"><h4>3 Months</h4><button>Buy Now</button></div>
+      <div class="product"><h4>Lifetime</h4><button>Buy Now</button></div>
+    </div>
+
+    <h3>COD Chair Keys 🔫</h3>
+    <div class="products">
+      <div class="product"><h4>1 Month</h4><button>Buy Now</button></div>
+      <div class="product"><h4>3 Months</h4><button>Buy Now</button></div>
+      <div class="product"><h4>Lifetime</h4><button>Buy Now</button></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tools Status 🛠️</h2>
+  <div class="tools-box">
+    <h3>VRChat Internal</h3>
+    <p>Online ✅</p>
+    <h3>Fortnite Chair</h3>
+    <p>Online ✅</p>
+    <h3>COD Chair</h3>
+    <p>Online ✅</p>
+  </div>
+</section>
+
+<footer>
+  <p>Join our <a href="https://discord.gg/" style="color:#00aaff;">Discord 💬</a> | Visit <a href="https://guns.lol/gooddoggoluna" style="color:#00aaff;">guns.lol/gooddoggoluna 🔗</a></p>
+</footer>
+
 <script>
-  particlesJS('particles-js', {
-    "particles": {
-      "number": { "value": 80 },
-      "color": { "value": "#00aaff" },
-      "shape": { "type": "circle" },
-      "opacity": { "value": 0.5, "random": true },
-      "size": { "value": 3, "random": true },
-      "move": { "enable": true, "speed": 2 }
-    },
-    "interactivity": {
-      "events": {
-        "onhover": { "enable": true, "mode": "repulse" },
-        "onclick": { "enable": true, "mode": "push" }
-      },
-      "modes": {
-        "push": { "particles_nb": 10 }
-      }
-    }
+  const music = document.getElementById('background-music');
+  const volumeControl = document.getElementById('volume');
+  volumeControl.addEventListener('input', function() {
+    music.volume = this.value;
   });
 
-  document.addEventListener('click', () => {
-    const music = document.getElementById('background-music');
-    music.muted = false;
-  }, { once: true });
-
-  const sections = document.querySelectorAll('section');
-  window.addEventListener('scroll', () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if(sectionTop < triggerBottom) {
-        section.classList.add('visible');
-      }
-    });
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 80 },
+      size: { value: 3 },
+      color: { value: '#00aaff' },
+      line_linked: { enable: true, color: '#00aaff' },
+      move: { speed: 2 }
+    }
   });
 </script>
 
